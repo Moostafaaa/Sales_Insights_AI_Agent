@@ -185,19 +185,6 @@ pip install requests pandas
 python safe_sales_insights_agent_hardened.py
 ```
 
----
-
-## 🗂️ Project Structure
-
-```
-safe-sales-insights-agent/
-├── safe_sales_insights_agent_hardened.py   # Main agent script
-├── README.md                               # This file
-├── level1_report.csv                       # Generated: Level 1 eval results
-├── level2_report.csv                       # Generated: Level 2 eval results
-├── level3_redteam_report.csv               # Generated: Red-team eval results
-└── full_eval_report.csv                    # Generated: Combined report
-```
 
 ---
 
@@ -222,16 +209,6 @@ safe-sales-insights-agent/
 2. **Aggregation leakage** — `groupby('employee_id')` effectively re-identifies individuals
 3. **Latency** — up to 5 LLM repair calls per query in worst case
 4. **Short vague queries** — fewer than 4 words may not trigger the synonym mapper
-
----
-
-## 🔮 Planned Improvements
-
-- [ ] Semantic deny-list using embedding similarity instead of keyword matching
-- [ ] Output size cap: summarize Series with more than 20 rows
-- [ ] Rate limiting and per-session audit logging
-- [ ] Fine-tuned safety classifier as a second gate before code execution
-- [ ] Unit tests for schema mapper independent of LLM
 
 ---
 
